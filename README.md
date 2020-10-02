@@ -81,9 +81,9 @@ The SIGNL4 event ID of the submitted event.
     title: 'SIGNL4 Alert'
     message: 'Alert from GitHub Actions.'
     X-S4-Service: 'Service',
-    X-S4-Location: '52.3984235,13.0544149',
-    X-S4-AlertingScenario: 'single_ack',
-    X-S4-Filtering: false,
-    X-S4-ExternalID: 'A1',
+    X-S4-Location: '52.3984235,13.0544149'
+    X-S4-AlertingScenario: 'single_ack'
+    X-S4-Filtering: false
+    X-S4-ExternalID: 'A1'
     X-S4-Status: 'new'
 ```
