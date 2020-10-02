@@ -1,0 +1,23 @@
+{
+  "name": "signl4-action-alert",
+  "version": "1.0.0",
+  "description": "A Github Javascript Action that sends SIGNL4 alerts.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rons4/signl4-action-alert.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions",
+	"Alert",
+	"SIGNL4",
+    "JavaScript",
+    "Webhook"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "superagent": "^6.1.0"
+  }
+}

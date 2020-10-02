@@ -1,0 +1,49 @@
+name: 'SIGNL4 Alerting'
+description:
+  'Send SIGNL4 alert.'
+branding:
+  icon: 'alert-triangle'
+  color: 'black'
+inputs:
+  team-secret:
+    description: 'Your SIGNL4 webhook URL.'
+    required: true
+    default: ''
+  title:
+    description: 'Alert title.'
+    required: true
+    default: 'SIGNL4 Alert'
+  message:
+    description: 'Alert message.'
+    required: false
+    default: ''
+  X-S4-Service:
+    description: 'Assigns the alert to the service / system category with the specified name.'
+    required: false
+    default: ''
+  X-S4-Location:
+    description: 'Transmit location information ("latitude, longitude") with your event and display a map in the mobile app.'
+    required: false
+    default: ''
+  X-S4-AlertingScenario:
+    description: 'Pass "single_ack" if only one person needs to confirm this alert. Pass "multi_ack" in case this alert must be confirmed by the number of people who are on duty at the time this alert is raised.'
+    required: false
+    default: 'single_ack'
+  X-S4-ExternalID:
+    description: 'If the event originates from a record in a 3rd party system, use this parameter to pass the unique ID of that record. That ID will be communicated in outbound webhook notifications from SIGNL4, which is great for correlation/synchronization of that record with the alert.'
+    required: false
+    default: ''
+  X-S4-Filtering:
+    description: 'Specify a boolean value of true or false to apply event filtering for this event, or not. If set to true, the event will only trigger a notification to the team, if it contains at least one keyword from one of your services and system categories (i.e. it is whitelisted).'
+    required: false
+    default: false
+  X-S4-Status:
+    description: 'If you want to resolve an existing alert by an external id (X-S4-ExternalID), you can add this status parameter. It has two possible values: "new" and "resolved". Sending an event with the status "new" will create a new alert. If you want to resolve and alert, make sure to set the X-S4-Status to "resolved" and provide an external ID via the "X-S4-ExternalID" parameter for the alert(s) you want to resolve. It is only possible to resolve an alert with a provided external id that initially triggered it. If you set the status to any other value the event will be discarded. This means no alert will trigger from it.'
+    required: false
+    default: 'new'
+outputs:
+  eventId:
+    description: 'The SIGNL4 event ID of the submitted event.'
+runs:
+  using: 'node12'
+  main: 'index.js'
