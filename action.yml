@@ -2,7 +2,7 @@ name: 'SIGNL4 Alerting'
 description:
   'Send SIGNL4 alert.'
 branding:
-  icon: 'alert-triangle'
+  icon: 'send'
   color: 'black'
 inputs:
   team-secret:
