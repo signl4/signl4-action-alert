@@ -24,7 +24,8 @@ const request = require('superagent');
 			'X-S4-AlertingScenario': xS4AlertingScenario,
 			'X-S4-Filtering': xS4Filtering,
 			'X-S4-ExternalID': xS4ExternalID,
-			'X-S4-Status': xS4Status
+			'X-S4-Status': xS4Status,
+			'X-S4-SourceSystem': 'GitHubActions',
 		}
 	} catch (err) {
 		core.setFailed(`Invalid JSON format:`, err);
