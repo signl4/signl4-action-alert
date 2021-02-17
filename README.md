@@ -75,7 +75,7 @@ The SIGNL4 event ID of the submitted event.
 
 ```yaml
 - name: SIGNL4 Alerting
-  uses: signl4/signl4-action-alert@v1
+  uses: signl4/signl4-action-alert@v1.1
   with:
     team-secret: ${{ secrets.SIGNL4_TEAM_SECRET }}
     title: 'SIGNL4 Alert'
